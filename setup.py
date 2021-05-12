@@ -8,7 +8,6 @@ setup(name='rpi_utils',
       version='1.0',
       description='A Python module for various raspberry pi project utilities.',
       classifiers=[
-          'License :: OSI Approved :: MIT License',
           'Topic :: Software Development :: Libraries',
           'Programming Language :: Python :: 3',
           'Operating System :: POSIX :: Linux',
