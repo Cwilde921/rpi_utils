@@ -1,5 +1,5 @@
 from typing import Tuple, List
-from time import sleep
+from asyncio import sleep
 
 try:
     import RPi.GPIO as GPIO
