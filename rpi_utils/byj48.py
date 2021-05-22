@@ -101,7 +101,7 @@ if __name__ == "__main__":
     for i in range(15):
         print(ss.next(-1))
 
-    m1 = Motor(config["r_motor_pins_bcm"], True)
+    m1 = Motor([1,2,3,4], True)
     m1.walk(12048, 0.003)
     m1.walk(-12048, 0.003)
     m1.release_break()
