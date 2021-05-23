@@ -27,6 +27,8 @@ class bts7960:
             GPIO.setup(self.R_IS, GPIO.OUT)
 
     def __del__(self):
+        self.LPWM_OUT.stop()
+        self.RPWM_OUT.stop()
         GPIO.setup(self.LPWM, GPIO.IN)
         GPIO.setup(self.RPWM, GPIO.IN)
         if self.L_EN is not None:
@@ -38,4 +40,15 @@ class bts7960:
         if self.R_IS is not None:
             GPIO.setup(self.R_IS, GPIO.IN)
 
+    def forward(self, duty_cycle):
+        self.LPWM_OUT.ChangeDutyCycle(0)
+        self.RPWM_OUT.ChangeDutyCycle(duty_cycle)
+
+    def reverse(self, duty_cycle):
+        self.RPWM_OUT.ChangeDutyCycle(0)
+        self.LPWM_OUT.ChangeDutyCycle(duty_cycle)
+
+    def stop(self):
+        self.LPWM_OUT.ChangeDutyCycle(0)
+        self.RPWM_OUT.ChangeDutyCycle(0)
 
